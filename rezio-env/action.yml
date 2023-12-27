@@ -1,0 +1,16 @@
+name: 'rezio action env'
+description: 'Detect rezio action envs'
+inputs:
+  rezio-env:
+    description: 'target rezio environment, default will detect from github ref/event by rezio frontend git flow'
+    required: false
+outputs:
+  rezio-env:
+    description: 'target rezio environment'
+  aws-region:
+    description: 'target aws region by environment'
+  eks-cluster:
+    description: 'target aws eks cluster name by environment'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
